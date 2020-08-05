@@ -6,8 +6,13 @@ html, body{
   overflow: hidden;
   margin: 0;
 }
+body{
+  display: flex;
+  flex-direction: column;
+}
 #title{
-  width: auto;
+  position: absolute;
+  width: inherit;
   height: 40px;
   font-size: 20px;
   text-align: center;
@@ -16,11 +21,15 @@ html, body{
   font-family: "Copperplate Gothic Light";
   font-weight: bold;
   font-variant: small-caps;
+  border-bottom: 1px solid black;
 }
 #input,.btn,#output {
   resize:none;
   font-family: "Times New Roman";
   text-align: center;
+}
+.input, .output {
+  flex: 1;
 }
 .button{
   position: relative;
@@ -29,6 +38,7 @@ html, body{
   width: 596px;
   height: 65px;
   z-index: 100;
+  flex: 2;
 }
 .btn{
   border: 2px solid black;
