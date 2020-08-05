@@ -9,23 +9,33 @@ html, body{
 body{
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 #title{
   position: absolute;
-  width: inherit;
-  height: 40px;
+  width: auto;
+  height: 6vh;
   font-size: 20px;
   text-align: center;
   z-index: 100;
-  line-height: 40px;
+  line-height: 6vh;
   font-family: "Copperplate Gothic Light";
   font-weight: bold;
   font-variant: small-caps;
   border-bottom: 1px solid black;
+  background: white;
+}
+#input, .button, #output{
+  width: 50vw;
+}
+#input, #output{
+  height: 40vh;
 }
 #input,.btn,#output {
   resize:none;
   font-family: "Times New Roman";
+}
+#input::placeholder, #output::placeholder{
   text-align: center;
 }
 .input, .output {
@@ -34,16 +44,17 @@ body{
 .input{
   display: flex;
   flex-direction: column-reverse;
+  margin-top: 7vh;
 }
 .button{
   position: relative;
-  display: inline-block;
-  text-align: center;
-  width: 596px;
-  height: 65px;
+  display: flex;
+  height: 20vh;
   z-index: 100;
   flex: 1;
   justify-content: center;
+  vertical-align: middle;
+  align-items: center;
 }
 .btn{
   border: 2px solid black;
@@ -57,10 +68,10 @@ body{
   z-index: 100;
 }
 #copy{
-  margin-left: 100px;
-  margin-right: 100px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-left: 35px;
   padding-right: 35px;
 }
