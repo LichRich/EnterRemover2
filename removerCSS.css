@@ -29,7 +29,11 @@ body{
   text-align: center;
 }
 .input, .output {
-  flex: 1;
+  flex: 4;
+}
+.input{
+  display: flex;
+  flex-direction: column-reverse;
 }
 .button{
   position: relative;
@@ -38,7 +42,7 @@ body{
   width: 596px;
   height: 65px;
   z-index: 100;
-  flex: 2;
+  flex: 1;
 }
 .btn{
   border: 2px solid black;
