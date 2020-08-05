@@ -30,6 +30,7 @@ body{
 }
 #input, #output{
   height: 40vh;
+  font-size: 1rem;
 }
 #input,.btn,#output {
   resize:none;
