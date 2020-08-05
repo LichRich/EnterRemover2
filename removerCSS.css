@@ -43,6 +43,7 @@ body{
   height: 65px;
   z-index: 100;
   flex: 1;
+  justify-content: center;
 }
 .btn{
   border: 2px solid black;
