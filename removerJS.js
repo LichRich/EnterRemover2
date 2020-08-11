@@ -6,6 +6,7 @@ window.onload = function(){
   document.getElementById("remove").onclick=remover;
   document.getElementById("copy").onclick=copy;
   document.getElementById("reset").onclick=reset;
+  document.getElementById("trans").onclick=trans;
 }
 
 function remover() {
@@ -26,17 +27,35 @@ function reset() {
   window.location.reload();
 }
 
-function onMouseColor(){
-  var remove = document.getElementById('remove');
-  var reset = document.getElementById('reset');
+function copy(){
+
+  var clip = document.createElement('input');
+  var target = document.getElementById('output').value;
+
+  if (target==="") {
+    swal("입력된 내용이 없습니다.","","error");
+  } else {
+    clip.setAttribute("value", target);
+    document.body.appendChild(clip);
+    clip.select();
+    document.execCommand("copy");
+    document.body.removeChild(clip);
+    swal("복사되었습니다.","","success");
+  }
+
 }
 
-function copy(){
-  var clip = document.createElement('input');
-  clip.setAttribute("value", document.getElementById('output').value);
-  document.body.appendChild(clip);
-  clip.select();
-  document.execCommand("copy");
-  document.body.removeChild(clip);
-  swal("복사되었습니다.","","success");
+function trans() {
+  const data = $("#translation").serialize();
+  $.ajax({
+    type:"POST",
+    url:"./ajax_trans.php",
+    data:data,
+    success:function(args){
+      $("#res_papago").html(args);
+    },
+    error:function(e){
+      alert(e.responseText);
+    }
+  });
 }
