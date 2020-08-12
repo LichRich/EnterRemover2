@@ -46,7 +46,7 @@ function copy(){
 }
 
 function trans() {
-  const data = $("#translation").serialize();
+  const data = $("form").serialize();
   $.ajax({
     type:"POST",
     url:"./ajax_trans.php",
