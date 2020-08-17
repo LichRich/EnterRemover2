@@ -10,6 +10,6 @@ $text = $_POST['output'];
 $trans = new GoogleTranslate();
 $result = $trans->translate($source, $target, $text);
 
-echo '<h2>'.$result.'</h2>';
+echo $result;
 
 ?>

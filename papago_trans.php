@@ -1,7 +1,7 @@
 <?php
   $trans_txt = $_POST['output'];
-  $client_id = "92466qC3Lh9L2w8a7lSd";
-  $client_secret = "1WQeS3v2oA";
+  $client_id = "Naver_Client_Id";
+  $client_secret = "Naver_Client_Secret";
   $encText = urlencode($trans_txt);
   $postvars = "source=en&target=ko&text=".$encText;
   $url = "https://openapi.naver.com/v1/papago/n2mt";
