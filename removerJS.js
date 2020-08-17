@@ -49,13 +49,23 @@ function trans() {
   const data = $("form").serialize();
   $.ajax({
     type:"POST",
-    url:"./ajax_trans.php",
+    url:"./google_trans.php",
     data:data,
     success:function(args){
-      $("#res_papago").html(args);
-    },
-    error:function(e){
+      $("#res_google").html(args.responseText);
+    }, error:function(e){
       alert(e.responseText);
     }
   });
+  // $.ajax({
+  //   type:"POST",
+  //   url:"./ajax_trans.php",
+  //   data:data,
+  //   success:function(args){
+  //     $("#res_papago").html(args);
+  //   },
+  //   error:function(e){
+  //     alert(e.responseText);
+  //   }
+  // });
 }
